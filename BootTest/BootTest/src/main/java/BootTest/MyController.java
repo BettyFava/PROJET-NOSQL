@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.neo4j.cypher.internal.compiler.v2_1.planner.logical.steps.allNodesLeafPlanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,9 @@ public class MyController {
 	@Autowired
 	PoneyRepo poneyRepo;
 	
+	@Autowired
+	PostRepo postRepo;
+	
 	//page d'accueil
 	
 //	@ResponseBody
@@ -29,8 +33,8 @@ public class MyController {
 	 @RequestMapping("/")
 	 public ModelAndView index() {
 	        final ModelAndView mav = new ModelAndView( "index" );
-	        Poney poney = poneyRepo.OnePoney();
-	        mav.addObject("one",poney);
+	        List <Post> posts = postRepo.allPost();
+	        mav.addObject("posts", posts);
 	        return mav;
 		}
 	

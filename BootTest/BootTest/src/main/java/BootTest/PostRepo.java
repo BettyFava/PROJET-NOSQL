@@ -9,44 +9,45 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.BasicQuery;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Service;
 
-public class ArticleRepo
+@Service
+public class PostRepo
 {
-	static final Logger logger = LoggerFactory.getLogger(Article.class);
+	static final Logger logger = LoggerFactory.getLogger(Post.class);
 	@Autowired
 	MongoTemplate mongoTemplate;
 	
-	public List<Article> allArticles()
+	public List<Post> allPost()
 	{
-		List<Article> result = null;
+		List<Post> result = null;
 		
-		if(mongoTemplate.collectionExists(Article.class))
+		if(mongoTemplate.collectionExists(Post.class))
 		{
 			Query query = new Query();
-			query.with(new Sort(Sort.Direction.DESC, "createddate"));
-			result = mongoTemplate.find(query, Article.class);
+			result = mongoTemplate.find(query, Post.class);
 		}
 		else
 		{
 			//TODO rase error
-			logger.error(Article.class.toString() + " collection not found");
+			logger.error(Post.class.toString() + " collection not found");
 		}
 		return(result);
 	}
 	
-	public Article getArticleById(String id)
+	public Post getPostById(String id)
 	{
-		Article result = null;
+		Post result = null;
 		
-		if(mongoTemplate.collectionExists(Article.class))
+		if(mongoTemplate.collectionExists(Post.class))
 		{
 			BasicQuery query = new BasicQuery("{_id:" + id + "}");
-			result = mongoTemplate.findOne(query, Article.class);
+			result = mongoTemplate.findOne(query, Post.class);
 		}
 		else
 		{
 			//TODO rase error
-			logger.error(Article.class.toString() + " collection not found");
+			logger.error(Post.class.toString() + " collection not found");
 		}
 		return(result);
 	}
