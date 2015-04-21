@@ -66,7 +66,7 @@ public class PostRepository
 		if(mongoTemplate.collectionExists(Post.class))
 		{
 			Query query = new Query(Criteria.where("id").is(id));
-			return mongoTemplate.updateFirst(query,Update.update("name", title), Post.class);
+			return mongoTemplate.updateFirst(query,Update.update("title", title), Post.class);
 		}
 		else
 		{
