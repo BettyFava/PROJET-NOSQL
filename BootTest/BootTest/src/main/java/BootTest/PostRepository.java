@@ -2,13 +2,10 @@ package BootTest;
 
 import java.util.List;
 
-import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.BasicQuery;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
@@ -30,6 +27,23 @@ public class PostRepository
 		if(mongoTemplate.collectionExists(Post.class))
 		{
 			Query query = new Query();
+			result = mongoTemplate.find(query, Post.class);
+		}
+		else
+		{
+			//TODO raise error
+			logger.error(Post.class.toString() + " collection not found");
+		}
+		return(result);
+	}
+	
+	public List<Post> getAllPost(int limit)
+	{
+		List<Post> result = null;
+		
+		if(mongoTemplate.collectionExists(Post.class))
+		{
+			Query query = new Query().limit(limit);
 			result = mongoTemplate.find(query, Post.class);
 		}
 		else
