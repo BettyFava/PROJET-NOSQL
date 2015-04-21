@@ -21,12 +21,10 @@ public class IndexController {
 	@Autowired
 	PostRepository postRepo;
 
-	
-	
 	 @RequestMapping("/")
 	 public ModelAndView index() {
 	        final ModelAndView mav = new ModelAndView( "index" );
-	        List <Post> posts = postRepo.allPost();
+	        List <Post> posts = postRepo.getAllPost();
 	        mav.addObject("posts", posts);
 	        return mav;
 		}
