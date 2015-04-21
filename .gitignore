@@ -80,3 +80,4 @@ local.properties
 # PDT-specific
 .buildpath 
 BootTest/.recommenders/
+.recommenders/
