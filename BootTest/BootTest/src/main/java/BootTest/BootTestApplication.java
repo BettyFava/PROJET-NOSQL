@@ -40,19 +40,6 @@ public class BootTestApplication {
         System.out.println("reached here ");
         registry.addResourceHandler("/resources/**").addResourceLocations("/static/");
     }
-//    
-//    @Bean
-//    @Scope(value = "singleton")
-//    public DataSource getDataSource() {
-//        // Configure data source.
-//        DriverManagerDataSource ds = new DriverManagerDataSource();
-//        ds.setDriverClassName("org.postgresql.Driver");
-//        ds.setUsername("postgres");
-//        ds.setPassword("postgres");
-//        ds.setUrl("jdbc:postgresql://localhost:5432/gigadbdev");
-//        return ds;
-//    }
-
 
   
     

@@ -1,20 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="fr">
 
+
 <head>
 
     <title>NoSQL</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="../css/clean-blog.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">L'antre du NoSQL</a>
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,48 +70,29 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('../img/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>L'ANTRE DU NoSQL</h1>
-                        <hr class="small">
-                        <span class="subheading">Un blog sur le NoSQL</span>
+                    <div class="post-heading">
+                        <h1><c:out value="${post.title}"></c:out></h1>
+                        <span class="meta">Posted by <c:out value="${post.author}"></c:out> on August 24, 2014</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-               <c:forEach items="${posts}" var="post">
-               <c:set var="post_id" value="${post.id}"/>
-           <div class="post-preview">
-           	<a href="post/${post_id}">
-                        <h2 class="post-title"> 
-                            ${post.title}
-                        </h2>
-                         </a>
-                    <p class="post-meta">Rédigé avec professionnalisme par ${post.author} on September 24, 2014</p>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <c:out value="${post.content}"></c:out>
                 </div>
-               
-                </c:forEach>
-                </div>
-                <hr>
-                
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Articles plus récents &rarr;</a>
-                    </li>
-                </ul>
             </div>
         </div>
-    </div>
+    </article>
 
     <hr>
 
@@ -146,20 +127,20 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; L'Antre du NOSQL</p>
+                    <p class="copyright text-muted">Copyright &copy; L'Antre du NoSQL</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
+    <script src="../js/clean-blog.min.js"></script>
 
 </body>
 
