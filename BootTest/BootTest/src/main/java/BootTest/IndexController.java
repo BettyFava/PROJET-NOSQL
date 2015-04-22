@@ -31,6 +31,18 @@ public class IndexController {
 	        mav.addObject( "post", post );
 	        return mav;
 	    }
+	 
+	 
+	 @RequestMapping( value = "post/delete/{id}" , method = RequestMethod.GET )
+	    public ModelAndView supprimerPost( @PathVariable( "id" ) final String id ){
+	        final ModelAndView mav = new ModelAndView ("index");
+
+	        postRepo.deletePostById(id);
+	        List <Post> posts = postRepo.getAllPost();
+	        mav.addObject("posts", posts);
+	        return mav;
+	    }
+
 
 
 
