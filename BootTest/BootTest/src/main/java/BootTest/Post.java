@@ -1,6 +1,8 @@
 package BootTest;
 
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,21 +15,28 @@ public class Post
 	private String title;
 	private String author;
 	private String content;
+	private Date creation;
+	
+	public Post()
+	{
+		this("Tilte","Author","Content");
+	}
 	
 	public Post(String title, String author, String content)
 	{
 		this.title = title;
 		this.author = author;
 		this.content = content;
+		this.creation = new Date();
 	}
-
+	
 	public String getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+/*	public void setId(String id) {
 		this.id = id;
-	}
+	}*/
 
 	public String getTitle() {
 		return title;
@@ -52,5 +61,12 @@ public class Post
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
+
+	public Date getCreation() {
+		return creation;
+	}
+
+	public void setCreation(Date creation) {
+		this.creation = creation;
+	}
 }

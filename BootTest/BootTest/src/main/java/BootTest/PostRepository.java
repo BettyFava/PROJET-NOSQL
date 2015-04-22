@@ -155,6 +155,5 @@ public class PostRepository
 	public Article getArticleByYear(Date author){}
 	public Article getArticleByMonth(Date author){}
 	public Article getArticleByDay(Date author){}
-
 	*/
 }
