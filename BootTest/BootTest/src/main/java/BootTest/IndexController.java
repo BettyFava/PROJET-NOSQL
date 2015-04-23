@@ -53,6 +53,13 @@ public class IndexController {
 	        return mav;
 	    }
 
+	 
+	 @RequestMapping( value = "valider" , method = RequestMethod.GET )
+	    public ModelAndView validerPost( @PathVariable( "id" ) final String id ){
+	        final ModelAndView mav = new ModelAndView ("edit");
+	        return mav;
+	    }
+
 
 
 

@@ -19,7 +19,7 @@ public class Post
 	
 	public Post()
 	{
-		this("Tilte","Author","Content");
+		this("Title","Author","Content");
 	}
 	
 	public Post(String title, String author, String content)
