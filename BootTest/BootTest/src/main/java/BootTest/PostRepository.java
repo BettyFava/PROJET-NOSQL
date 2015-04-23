@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -22,19 +23,7 @@ public class PostRepository
 	
 	public List<Post> getAllPost()
 	{
-		List<Post> result = null;
-		
-		if(mongoTemplate.collectionExists(Post.class))
-		{
-			Query query = new Query();
-			result = mongoTemplate.find(query, Post.class);
-		}
-		else
-		{
-			//TODO raise error
-			logger.error(Post.class.toString() + " collection not found");
-		}
-		return(result);
+		return(getAllPost(-1));
 	}
 	
 	public List<Post> getAllPost(int limit)
@@ -43,7 +32,10 @@ public class PostRepository
 		
 		if(mongoTemplate.collectionExists(Post.class))
 		{
-			Query query = new Query().limit(limit);
+			Query query = new Query();
+			if (limit > 0)
+				query.limit(limit);
+			query.with(new Sort(Sort.Direction.DESC,"creation"));
 			result = mongoTemplate.find(query, Post.class);
 		}
 		else
@@ -155,6 +147,5 @@ public class PostRepository
 	public Article getArticleByYear(Date author){}
 	public Article getArticleByMonth(Date author){}
 	public Article getArticleByDay(Date author){}
-
 	*/
 }
