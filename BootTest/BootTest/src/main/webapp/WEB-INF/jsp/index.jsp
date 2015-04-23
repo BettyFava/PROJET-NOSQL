@@ -98,7 +98,19 @@
                          </a>
                     <p class="post-meta">Rédigé avec professionnalisme par ${post.author} on September 24, 2014</p>
                 </div>
+                
+                	<a href="delete/${post_id}"> <span class="fa-stack fa-lg">
+							<i class="fa fa-circle fa-stack-2x"></i> <i
+							class="fa fa-eraser fa-stack-1x fa-inverse"></i>
+					</span>
+					</a>
                
+               
+               <a href="edit/${post_id}"> <span class="fa-stack fa-lg">
+							<i class="fa fa-circle fa-stack-2x"></i> <i
+							class="fa fa-edit fa-stack-1x fa-inverse"></i>
+					</span>
+					</a>
                 </c:forEach>
                 </div>
                 <hr>

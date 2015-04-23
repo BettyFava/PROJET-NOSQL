@@ -33,13 +33,23 @@ public class IndexController {
 	    }
 	 
 	 
-	 @RequestMapping( value = "post/delete/{id}" , method = RequestMethod.GET )
+	 @RequestMapping( value = "delete/{id}" , method = RequestMethod.GET )
 	    public ModelAndView supprimerPost( @PathVariable( "id" ) final String id ){
 	        final ModelAndView mav = new ModelAndView ("index");
 
 	        postRepo.deletePostById(id);
 	        List <Post> posts = postRepo.getAllPost();
 	        mav.addObject("posts", posts);
+	        return mav;
+	    }
+
+	 
+	 @RequestMapping( value = "edit/{id}" , method = RequestMethod.GET )
+	    public ModelAndView editPost( @PathVariable( "id" ) final String id ){
+	        final ModelAndView mav = new ModelAndView ("edit");
+
+	        Post post=postRepo.getPostById(id);
+	        mav.addObject( "post", post );
 	        return mav;
 	    }
 
