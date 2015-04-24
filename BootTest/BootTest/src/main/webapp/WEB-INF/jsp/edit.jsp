@@ -81,37 +81,40 @@
 		<div class="container">
 			<div class="row">
 			<h4>Modifier un article</h4>
+			<form:form method="POST" commandName="post" action="valider">
 			<div class="form-group">
-			<form:label path="post.author" class="control-label col-md-3">
+			<form:label path="author" class="control-label col-md-3">
 					Auteur <span class="required">*</span>
 			</form:label>
 			<div class="col-md-9">
-			<form:input type="text" class="form-control" path="post.author" value="${post.author}" />
+			<form:input type="text" class="form-control" path="author" value="${author}" />
 				</div>
 				
 				
-			<form:label path="post.title" class="control-label col-md-3">
+			<form:label path="title" class="control-label col-md-3">
 					Titre <span class="required">*</span>
 			</form:label>
 			<div class="col-md-9">
-			<form:input type="text" class="form-control" path="post.title" value="${post.title}" />
+			<form:input type="text" class="form-control" path="title" value="${title}" />
 				</div>
 				
 				
 				
-			<form:label path="post.content" class="control-label col-md-3">
+			<form:label path="content" class="control-label col-md-3">
 					Message <span class="required">*</span>
 			</form:label>
 			<div class="col-md-9">
-			<form:textarea type="text" class="form-control" path="post.content" value="${post.content}" />
+			<form:textarea type="text" class="form-control" path="content" value="${content}" />
 				</div>
 				<div class="col-md-center">	
-					<div class="btn-group" role="group">
-					<button id="validerForm" type="submit" class="btn btn-default"> Valider </button>
-					<button id="supprimerPost" type="submit"  class="btn btn-default"> Supprimer </button>
-				</div>
+				<br />
+					
+					<input value="Valider" type="submit" class="btn btn-default"> 
+				
+			
 			</div>
 			</div>
+			</form:form>
 		</div>
 	</div>
 				
