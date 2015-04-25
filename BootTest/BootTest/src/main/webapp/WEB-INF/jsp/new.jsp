@@ -4,8 +4,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html lang="fr">
-
+<<html>
 
 <head>
 
@@ -15,7 +14,7 @@
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="../css/clean-blog.min.css" rel="stylesheet">*
+<link href="../css/clean-blog.min.css" rel="stylesheet">
 
 <!-- Personal CSS -->
 <link href="../css/nosql.css" rel="stylesheet">
@@ -55,14 +54,15 @@
 				</button>
 				<a class="navbar-brand" href="/">Accueil</a>
 			</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="new">Nouvel Article</a>
+                        <a href="new">Nouveau</a>
                     </li>
                     <li>
                         <a href="contact">Qui sommes-nous ?</a>
@@ -95,9 +95,7 @@
 	<article>
 		<div class="container">
 			<div class="row">
-			<h4>Modifier un article</h4>
-			
-
+			<h4>Rédiger un article</h4>
 			<form:form method="POST" modelAttribute="post" action="valider">
 			<div class="form-group">
 			<form:label path="author" class="control-label col-md-3">
@@ -113,7 +111,6 @@
 			</form:label>
 			<div class="col-md-9">
 			<form:input type="text" class="form-control" path="title" value="${title}" />
-			
 				</div>
 				
 				
@@ -125,10 +122,8 @@
 			<form:textarea rows="25" type="text" class="form-control" path="content" value="${content}" />
 				</div>
 				<div class="col-md-center">	
-				<br />
-				<br />
 						<div class="form-actions centrage"> 
-					<button  type="submit" class="btn btn-default buttonmargin"> Modifier </button> 
+					<button  type="submit" class="btn btn-default buttonmargin"> Créer </button> 
 				 </div>  					
 				
 			
@@ -159,9 +154,6 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
-
-	<!-- Custom Theme JavaScript -->
-	<script src="../js/clean-blog.min.js"></script>
 
 </body>
 
