@@ -4,7 +4,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<<html>
+<html>
 
 <head>
 
@@ -52,20 +52,23 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Accueil</a>
+			<a class="navbar-brand" href="retour">L'antre du NoSQL</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="retour">Home</a>
                     </li>
                     <li>
                         <a href="new">Nouveau</a>
                     </li>
                     <li>
                         <a href="contact">Qui sommes-nous ?</a>
+                    </li>
+                      <li>
+                        <a href="logout">Déconnexion</a>
                     </li>
                 </ul>
             </div>
@@ -102,7 +105,7 @@
 					Auteur <span class="required">*</span>
 			</form:label>
 			<div class="col-md-9">
-			<form:input type="text" class="form-control" path="author" value="${author}" />
+			<form:input type="text" class="form-control" path="author" />
 				</div>
 				
 				
@@ -110,7 +113,7 @@
 					Titre <span class="required">*</span>
 			</form:label>
 			<div class="col-md-9">
-			<form:input type="text" class="form-control" path="title" value="${title}" />
+			<form:input type="text" class="form-control" path="title"/>
 				</div>
 				
 				
@@ -119,7 +122,7 @@
 					Message <span class="required">*</span>
 			</form:label>
 			<div class="col-md-9">
-			<form:textarea rows="25" type="text" class="form-control" path="content" value="${content}" />
+			<form:textarea rows="25" type="text" class="form-control" path="content" />
 				</div>
 				<div class="col-md-center">	
 						<div class="form-actions centrage"> 

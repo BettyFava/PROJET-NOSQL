@@ -49,21 +49,33 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Accueil</a>
+		<a class="navbar-brand" href="retour">L'antre du NoSQL</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="retour">Home</a>
                     </li>
+                        <c:if test="${administrateur==true}">
                     <li>
                         <a href="new">Nouvel Article</a>
                     </li>
+                    </c:if>
                     <li>
                         <a href="contact">Qui sommes-nous ?</a>
                     </li>
+                       <c:if test="${administrateur==false}">
+                      <li>
+                        <a href="login">Connexion</a>
+                    </li>
+                    </c:if>
+                    <c:if test="${administrateur==true}">
+                      <li>
+                        <a href="logout">Déconnexion</a>
+                    </li>
+                    </c:if>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
