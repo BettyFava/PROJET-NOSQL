@@ -2,6 +2,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,7 +15,10 @@
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="../css/clean-blog.min.css" rel="stylesheet">
+<link href="../css/clean-blog.min.css" rel="stylesheet">*
+
+<!-- Personal CSS -->
+<link href="../css/nosql.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link
@@ -49,33 +53,23 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-		<a class="navbar-brand" href="retour">L'antre du NoSQL</a>
+				<a class="navbar-brand" href="retour">L'antre du NoSQL</a>
 			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
+		<!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="retour">Home</a>
                     </li>
-                        <c:if test="${administrateur==true}">
                     <li>
                         <a href="new">Nouvel Article</a>
                     </li>
-                    </c:if>
                     <li>
                         <a href="contact">Qui sommes-nous ?</a>
                     </li>
-                       <c:if test="${administrateur==false}">
-                      <li>
-                        <a href="login">Connexion</a>
-                    </li>
-                    </c:if>
-                    <c:if test="${administrateur==true}">
                       <li>
                         <a href="logout">Déconnexion</a>
                     </li>
-                    </c:if>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -92,11 +86,8 @@
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="post-heading">
 						<h1>
-							<c:out value="${post.title}"></c:out>
+						L'antre du NoSQL
 						</h1>
-						<span class="meta">Posted by <c:out value="${post.author}"></c:out>
-							on August 24, 2014
-						</span>
 					</div>
 				</div>
 			</div>
@@ -107,14 +98,49 @@
 	<article>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<c:out value="${post.content}"></c:out>
-					<c:set var="post_id" value="${post.id}" />
+			<h4>Modifier un article</h4>
+			
+
+			<form:form method="POST" modelAttribute="post" action="valider">
+			<div class="form-group">
+			<form:label path="author" class="control-label col-md-3">
+					Auteur <span class="required">*</span>
+			</form:label>
+			<div class="col-md-9">
+			<form:input type="text" class="form-control" path="author" value="${author}" />
 				</div>
 				
-
+				
+			<form:label path="title" class="control-label col-md-3">
+					Titre <span class="required">*</span>
+			</form:label>
+			<div class="col-md-9">
+			<form:input type="text" class="form-control" path="title" value="${title}" />
+			
+				</div>
+				
+				
+				
+			<form:label path="content" class="control-label col-md-3">
+					Message <span class="required">*</span>
+			</form:label>
+			<div class="col-md-9">
+			<form:textarea rows="25" type="text" class="form-control" path="content" value="${content}" />
+				</div>
+				<div class="col-md-center">	
+				<br />
+				<br />
+						<div class="form-actions centrage"> 
+					<button  type="submit" class="btn btn-default buttonmargin"> Modifier </button> 
+				 </div>  					
+				
+			
 			</div>
+			</div>
+			</form:form>
 		</div>
+	</div>
+				
 	</article>
 
 	<hr>
@@ -124,7 +150,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					
 					<p class="copyright text-muted">Copyright &copy; L'Antre du
 						NoSQL</p>
 				</div>
@@ -137,6 +162,9 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="../js/clean-blog.min.js"></script>
 
 </body>
 

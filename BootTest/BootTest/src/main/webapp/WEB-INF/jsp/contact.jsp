@@ -49,7 +49,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-		<a class="navbar-brand" href="retour">L'antre du NoSQL</a>
+			<a class="navbar-brand" href="retour">L'antre du NoSQL</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -58,7 +58,7 @@
                     <li>
                         <a href="retour">Home</a>
                     </li>
-                        <c:if test="${administrateur==true}">
+                     <c:if test="${administrateur==true}">
                     <li>
                         <a href="new">Nouvel Article</a>
                     </li>
@@ -83,61 +83,65 @@
 		<!-- /.container -->
 	</nav>
 
-	<!-- Page Header -->
-	<!-- Set your background image for this header on the line below. -->
-	<header class="intro-header"
-		style="background-image: url('../img/post-bg.jpg')">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<div class="post-heading">
-						<h1>
-							<c:out value="${post.title}"></c:out>
-						</h1>
-						<span class="meta">Posted by <c:out value="${post.author}"></c:out>
-							on August 24, 2014
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
 
-	<!-- Post Content -->
-	<article>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<c:out value="${post.content}"></c:out>
-					<c:set var="post_id" value="${post.id}" />
-				</div>
-				
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Présentation</h1>
+                        <hr class="small">
+                        <span class="subheading"> Un blog, trois étudiants</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-			</div>
-		</div>
-	</article>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+               <p>Etudiants en 4ème année à EPSI Lille, nous sommes passionnés par les nouvelles technologiques</p>
+                <ul class="text-center">
+                        <li>
+                           <b>Florian De Saint Léger</b>, administrateur système et réseau chez BioMediqa 
+                        </li>
+                        <li>
+                          <b>Florence Delbarre</b>, analyse programmeuse JEE chez Unis
+                        </li>
+                        <li>
+                           <b>Ludovic Mantovani</b>, artiste sur Blender 
+                        </li>
+                    </ul>
+              	
+            </div>
+        </div>
+    </div>
 
-	<hr>
+    <hr>
 
-	<!-- Footer -->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					
-					<p class="copyright text-muted">Copyright &copy; L'Antre du
-						NoSQL</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted">Copyright &copy; L'antre du NoSQL</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-	<!-- jQuery -->
-	<script src="../js/jquery.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="../js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
 
 </body>
 
 </html>
+

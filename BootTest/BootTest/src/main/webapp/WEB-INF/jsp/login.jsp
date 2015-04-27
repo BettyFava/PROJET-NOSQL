@@ -15,6 +15,10 @@
 
     <!-- Custom CSS -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
+    
+     <!-- Custom CSS -->
+    <link href="css/login.css" rel="stylesheet">
+    
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -52,24 +56,9 @@
                     <li>
                         <a href="retour">Home</a>
                     </li>
-                     <c:if test="${administrateur==true}">
-                    <li>
-                        <a href="new">Nouvel Article</a>
-                    </li>
-                    </c:if>
                     <li>
                         <a href="contact">Qui sommes-nous ?</a>
                     </li>
-                      <c:if test="${administrateur==false}">
-                      <li>
-                        <a href="login">Connexion</a>
-                    </li>
-                    </c:if>
-                    <c:if test="${administrateur==true}">
-                      <li>
-                        <a href="logout">Déconnexion</a>
-                    </li>
-                    </c:if>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -77,68 +66,33 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>L'ANTRE DU NoSQL</h1>
-                        <hr class="small">
-                        <span class="subheading">Un blog sur le NoSQL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <!-- Main Content -->
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-               <c:forEach items="${posts}" var="post">
-               <c:set var="post_id" value="${post.id}"/>
-           <div class="post-preview">
-           	<a href="post/${post_id}">
-                        <h2 class="post-title"> 
-                            ${post.title}
-                        </h2>
-                         </a>
-                    <p class="post-meta">Rédigé avec professionnalisme par ${post.author} on September 24, 2014</p>
-                </div>
-                
-                <c:if test="${administrateur==true}">
-
-                	<a href="delete/${post_id}"> <span class="fa-stack fa-lg">
-							<i class="fa fa-circle fa-stack-2x"></i> <i
-							class="fa fa-eraser fa-stack-1x fa-inverse"></i>
-					</span>
-					</a>
-               
-               
-               <a href="edit/${post_id}"> <span class="fa-stack fa-lg">
-							<i class="fa fa-circle fa-stack-2x"></i> <i
-							class="fa fa-edit fa-stack-1x fa-inverse"></i>
-					</span>
-					</a>
-				</c:if>
-
-                </c:forEach>
-                </div>
-                <hr>
-                
-                <!-- Pager -->
-                <ul class="pager">
-                <c:if test="${administrateur==true}">
-                    <li class="next">
-                        <a href="new">Nouvel Article</a>
-                    </li>
-                </c:if>
-                </ul>
-            </div>
+         <div class="row vertical-offset-100">
+    	<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Veuillez saisir vos informations d'identification</h3>
+			 	</div>
+			  	<div class="panel-body">
+			    	<form:form method="post" action="connexion" name="user" commandName="user">
+                    <fieldset>
+			    	  	<div class="form-group">
+			    		   <form:input  class="form-control" type="text" name="pseudonyne" path="pseudonyme" title="pseudonyme" value=""/>
+			    		</div>
+			    		<div class="form-group">
+			    			 	<form:input class="form-control" type="password" name="password" path="password" title="Password" value=""/>
+			    		</div>
+			    		<input class="btn btn-lg btn-success btn-block" type="submit" name="connexion" value="Se connecter">
+			    		
+			    	</fieldset>
+			      	</form:form>
+			    </div>
+			</div>
+		</div>
+	</div>
         </div>
-    <hr>
 
     <!-- Footer -->
     <footer>
@@ -159,7 +113,13 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
+    
+    <script src="js/login.js"></script>
+    
+    <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
 
 </body>
 
 </html>
+
+

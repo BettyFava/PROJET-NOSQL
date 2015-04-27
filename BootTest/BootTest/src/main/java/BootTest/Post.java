@@ -14,6 +14,11 @@ public class Post
 	private String author;
 	private String content;
 	
+	public Post()
+	{
+		this("Title","Author","Content");
+	}
+	
 	public Post(String title, String author, String content)
 	{
 		this.title = title;
