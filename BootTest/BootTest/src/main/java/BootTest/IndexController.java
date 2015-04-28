@@ -27,6 +27,9 @@ public class IndexController {
 	@Autowired
 	UserRepository userRepo;
 	
+	@Autowired
+	CommentRepository commentRepo;
+	
 	
 	//page d'accueil (aucun droit d'admin par defaut donc btn modifier/supprimer non affichées)
 	 @RequestMapping("/")
