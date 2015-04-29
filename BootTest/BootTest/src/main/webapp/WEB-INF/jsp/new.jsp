@@ -36,6 +36,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<!-- Css Editeur -->
+
+
 
 </head>
 
@@ -122,10 +125,12 @@
 					Message <span class="required">*</span>
 			</form:label>
 			<div class="col-md-9">
-			<form:textarea rows="25" type="text" class="form-control" path="content" />
+			
+			
+			<form:textarea rows="10" type="text" class="form-control" path="content" />
 				</div>
 				<div class="col-md-center">	
-						<div class="form-actions centrage"> 
+						<div class="form-actions right"> 
 					<button  type="submit" class="btn btn-default buttonmargin"> Créer </button> 
 				 </div>  					
 				
@@ -133,6 +138,7 @@
 			</div>
 			</div>
 			</form:form>
+			
 		</div>
 	</div>
 				
@@ -151,6 +157,19 @@
 			</div>
 		</div>
 	</footer>
+
+<script>
+	
+</script>
+		<!-- JS Editeur -->
+		<script type="text/javascript" src="../js/tinymce/tinymce.min.js"></script>
+
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea"
+ });
+</script>
+
 
 	<!-- jQuery -->
 	<script src="../js/jquery.js"></script>
