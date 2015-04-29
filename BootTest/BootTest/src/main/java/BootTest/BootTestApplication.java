@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
+
 @EnableAutoConfiguration
 @EnableConfigurationProperties
 @ComponentScan(basePackages="BootTest")
