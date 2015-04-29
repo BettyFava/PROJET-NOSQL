@@ -1,7 +1,7 @@
 package BootTest;
 
 
-import java.util.Date;
+import java.util.ArrayList;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * <li>Un title, suceptible d'etre change.</li>
  * <li>Un auteur, suceptible d'etre change.</li>
  * <li>Un contenu, suceptible d'etre change.</li>
- * <li>Une date de creation, attribuee definitivement a la creation de l'objet.</li>
+ * <li>Une liste de commentaires, suceptible d'etre change par ajout.</li>
  * </ul>
  * </p>
  * @author Ludovic Mantovani
@@ -59,11 +59,12 @@ public class Post
 	private String content;
 	
     /**
-     * La date de creation du Post. La date de creation est attribuee definitivement.
+     * Les commentaires du Post. Le contenu est changeable par ajout.
      * 
-     * @see Post#getCreation()
+     * @see Post#getComments()
+     * @see Post#addComment(String)
      */
-	private Date creation;
+	private ArrayList<String> comments = new ArrayList<String>();
 	
 	 /**
      * Constructeur par defaut de Post.
@@ -107,7 +108,6 @@ public class Post
 		this.title = title;
 		this.author = author;
 		this.content = content;
-		this.creation = new Date();
 	}
 	
 	/**
@@ -191,13 +191,37 @@ public class Post
 	}
 
 	/**
-     * Retourne la date de creation du post.
+     * Retourne les commentaires du post.
      * 
-     * @return La date de creation du post.
+     * @return Les commentaires du post.
      * 
-     * @see Post#create
+     * @see Post#comments
      */
-	public Date getCreation() {
-		return creation;
+	public ArrayList<String> getComments() {
+		return comments;
 	}
+
+	/**
+     * Ajoute un commentaire au post.
+     * 
+     * @param commentaire
+     * 			Le nouveau commentaire.
+     * 
+     * @see Post#comments
+     */
+	public void addComment(String comment) {
+		this.comments.add(comment);
+	}
+	
+	/**
+     * Retourne le nombre de commentaires du post.
+     * 
+     * @return Le nombre de commentaires du post.
+     * 
+     * @see Post#comments
+     */
+	public int getCommentsNbr() {
+		return comments.size();
+	}
+	
 }

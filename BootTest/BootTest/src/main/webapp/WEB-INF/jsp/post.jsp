@@ -111,8 +111,17 @@
 					<c:out value="${post.content}"></c:out>
 					<c:set var="post_id" value="${post.id}" />
 				</div>
-				
-
+			</div>
+		</div>
+		<div class="comments">
+			<div class="row">
+				<div >
+				<c:forEach items="${post.getComments()}" var="comment">
+				<blockquote>
+					<c:out value="${comment}"></c:out>
+				</blockquote>
+				</c:forEach>
+				</div>
 			</div>
 		</div>
 	</article>

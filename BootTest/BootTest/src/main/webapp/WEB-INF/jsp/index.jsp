@@ -106,7 +106,7 @@
                         </h2>
                          </a>
                     <p class="post-meta">Rédigé avec professionnalisme par ${post.author} on September 24, 2014</p>
-                     <p class="post-meta"><bold>${nbrComment} commentaire(s)</bold></p>
+                    <p class="post-meta"><bold>${post.getCommentsNbr()} commentaire(s)</bold></p>
                 </div>
                 
                 <c:if test="${administrateur==true}">
