@@ -127,6 +127,23 @@
 				</div>
 			</div>
 		</div>
+		<hr>
+		<div class="container">
+			<div class="row">
+				<h4>Ajouter un commentaire</h4>				
+				<form:form method="POST" modelAttribute="post" action="valider_commentaire">
+				<div class="form-group">
+					<form:hidden path="id" value="${id}" />
+					<div class="col-md-6">
+						<input type="text" class="form-control" name="comments"/>
+						<div class="form-actions right"> 
+							<button  type="submit" class="btn btn-default buttonmargin"> Ajouter </button> 
+				 		</div> 
+					</div>
+				</div>
+				</form:form>
+			</div>
+		</div>
 	</article>
 
 	<hr>
