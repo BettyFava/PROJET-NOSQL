@@ -2,6 +2,7 @@ package BootTest;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,6 +18,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * <li>Un auteur, suceptible d'etre change.</li>
  * <li>Un contenu, suceptible d'etre change.</li>
  * <li>Une liste de commentaires, suceptible d'etre change par ajout.</li>
+ * <li>Une date de creation, attribuee definitivement a la creation de l'objet.</li>
  * </ul>
  * </p>
  * @author Ludovic Mantovani
@@ -66,6 +68,13 @@ public class Post
      */
 	private ArrayList<String> comments = new ArrayList<String>();
 	
+    /**
+     * La date de creation du Post. La date de creation est attribuee definitivement.
+     * 
+     * @see Post#getCreation()
+     */
+    private Date creation;
+	
 	 /**
      * Constructeur par defaut de Post.
      * <p>
@@ -108,6 +117,7 @@ public class Post
 		this.title = title;
 		this.author = author;
 		this.content = content;
+		this.creation = new Date();
 	}
 	
 	/**
@@ -224,4 +234,15 @@ public class Post
 		return comments.size();
 	}
 	
+    /**
+     * Retourne la date de creation du post.
+     * 
+     * @return La date de creation du post.
+     * 
+     * @see Post#create
+     */
+    public Date getCreation() {
+        return creation;
+    }
+
 }
