@@ -106,7 +106,7 @@
                             ${post.title}
                         </h2>
                          </a>
-                    <p class="post-meta">Rédigé avec professionnalisme par ${post.author} on September 24, 2014</p>
+                    <p class="post-meta">Rédigé avec professionnalisme par ${post.author} le ${post.getCreation()}</p>
                     <p class="post-meta"><bold>${post.getCommentsNbr()} commentaire(s)</bold></p>
                 </div>
                 

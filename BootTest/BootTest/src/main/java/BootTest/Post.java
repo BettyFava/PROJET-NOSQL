@@ -1,8 +1,10 @@
 package BootTest;
 
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -241,8 +243,11 @@ public class Post
      * 
      * @see Post#create
      */
-    public Date getCreation() {
-        return creation;
+    public String getCreation() {
+    	Locale locale = Locale.getDefault();
+    	DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL, locale);
+    	
+        return dateFormat.format(creation);
     }
 
 }

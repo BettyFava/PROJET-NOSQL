@@ -97,8 +97,8 @@
 						<h1>
 							<c:out value="${post.title}"></c:out>
 						</h1>
-						<span class="meta">Rédigé avec professionnalisme par <c:out value="${post.author}"> on September 24, 2014 </c:out>
-							on August 24, 2014
+						<span class="meta">Rédigé avec professionnalisme par <c:out value="${post.author}"> le ${post.getCreation()}</c:out>
+							le ${post.getCreation()}
 						</span>
 					</div>
 				</div>
