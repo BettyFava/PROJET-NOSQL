@@ -15,7 +15,7 @@
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="../css/clean-blog.min.css" rel="stylesheet">*
+<link href="../css/clean-blog.min.css" rel="stylesheet">
 
 <!-- Personal CSS -->
 <link href="../css/nosql.css" rel="stylesheet">
@@ -79,8 +79,8 @@
 
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
-	<header class="intro-header"
-		style="background-image: url('../img/post-bg.jpg')">
+	<header class="intro-header centrage"
+		style="background-image: url('../img/fontupdate.jpg')">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -126,12 +126,12 @@
 					Message <span class="required">*</span>
 			</form:label>
 			<div class="col-md-9">
-			<form:textarea rows="25" type="text" class="form-control" path="content" value="${content}" />
+			<form:textarea rows="10" type="text" class="form-control" path="content" value="${content}" />
 				</div>
 				<div class="col-md-center">	
 				<br />
 				<br />
-						<div class="form-actions centrage"> 
+						<div class="form-actions right"> 
 					<button  type="submit" class="btn btn-default buttonmargin"> Modifier </button> 
 				 </div>  					
 				
@@ -157,6 +157,15 @@
 			</div>
 		</div>
 	</footer>
+	<!-- JS Editeur -->
+	<script type="text/javascript" src="../js/tinymce/tinymce.min.js"></script>
+
+	<script type="text/javascript">
+		tinymce.init({
+    		selector: "textarea"
+ 		});
+	</script>
+	
 
 	<!-- jQuery -->
 	<script src="../js/jquery.js"></script>

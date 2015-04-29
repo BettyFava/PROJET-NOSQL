@@ -26,6 +26,9 @@
 <link
 	href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
 	rel='stylesheet' type='text/css'>
+	
+
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -94,7 +97,7 @@
 						<h1>
 							<c:out value="${post.title}"></c:out>
 						</h1>
-						<span class="meta">Posted by <c:out value="${post.author}"></c:out>
+						<span class="meta">Rédigé avec professionnalisme par <c:out value="${post.author}"> on September 24, 2014 </c:out>
 							on August 24, 2014
 						</span>
 					</div>
@@ -108,7 +111,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<c:out value="${post.content}"></c:out>
+					<c:out value="${post.content}" escapeXml="false"/>
 					<c:set var="post_id" value="${post.id}" />
 				</div>
 			</div>
@@ -140,6 +143,7 @@
 			</div>
 		</div>
 	</footer>
+
 
 	<!-- jQuery -->
 	<script src="../js/jquery.js"></script>

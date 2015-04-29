@@ -2,6 +2,9 @@
 	text-align: center;
 }
 
+.right {
+	text-align: right;
+}
 .buttonmargin{
 	margin-top: 20px;
 }
