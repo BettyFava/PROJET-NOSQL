@@ -101,9 +101,9 @@
 			<h4>Modifier un article</h4>
 			
 			
-			<form:form method="POST" modelAttribute="post" action="valider">
+			<form:form method="POST" modelAttribute="post" action="valider/${id}">
 			<div class="form-group">
-			<form:hidden path="id" value="${id}" />
+			<%-- <form:hidden path="id" value="${id}" /> --%>
 			<form:label path="author" class="control-label col-md-3">
 					Auteur <span class="required">*</span>
 			</form:label>

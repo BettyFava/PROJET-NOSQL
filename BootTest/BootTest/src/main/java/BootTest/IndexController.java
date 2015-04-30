@@ -24,8 +24,6 @@ public class IndexController {
 	@Autowired
 	UserRepository userRepo;
 
-	@Autowired
-	CommentRepository commentRepo;
 
 	// page d'accueil (aucun droit d'admin par defaut donc btn
 	// modifier/supprimer non affichées)
@@ -52,7 +50,7 @@ public class IndexController {
 
 	// affiche l'index et renvoie à la methode retour(final HttpSession session)
 	// afin d'afficher toutes les info nécessaires
-	@RequestMapping(value = { "retour", "post/retour" })
+	@RequestMapping(value = { "retour", "post/retour", "edit/retour", "new/retour", "comment/retour"   })
 	public ModelAndView retour() {
 		ModelAndView mv = new ModelAndView("redirect:/index");
 		return mv;
@@ -148,10 +146,10 @@ public class IndexController {
 	}
 
 	// permet de valider l'édition d'un post (bouton Modifier dans edit.jsp)
-	@RequestMapping(value = "/edit/valider", method = RequestMethod.POST)
-	public ModelAndView submitedit(@ModelAttribute("post") Post post,
+	@RequestMapping(value = "/edit/valider/{id}", method = RequestMethod.POST)
+	public ModelAndView submitedit(@ModelAttribute("post") Post post, @PathVariable("id") final String id,
 			final HttpSession session) {
-		postRepo.updatePostById(post.getId(), post.getTitle(),
+		postRepo.updatePostById(id, post.getTitle(),
 				post.getAuthor(), post.getContent());
 		ModelAndView mv = new ModelAndView("redirect:/index");
 		return mv;
