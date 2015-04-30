@@ -65,9 +65,6 @@
                         <a href="retour">Home</a>
                     </li>
                     <li>
-                        <a href="new">Nouveau</a>
-                    </li>
-                    <li>
                         <a href="contact">Qui sommes-nous ?</a>
                     </li>
                       <li>

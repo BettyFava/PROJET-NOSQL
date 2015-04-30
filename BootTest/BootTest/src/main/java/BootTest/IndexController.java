@@ -65,14 +65,14 @@ public class IndexController {
 	}
 
 	// affiche la page de présentation/contact
-	@RequestMapping("contact")
+	@RequestMapping(value = { "contact", "post/contact", "edit/contact", "new/contact"})
 	public ModelAndView contact() {
 		final ModelAndView mav = new ModelAndView("contact");
 		return mav;
 	}
 
 	// affiche la page de login
-	@RequestMapping("login")
+	@RequestMapping(value = { "login", "post/login", "contact/login"})
 	public ModelAndView login() {
 		final ModelAndView mav = new ModelAndView("login");
 		mav.addObject("user", new User());
@@ -129,7 +129,7 @@ public class IndexController {
 	}
 
 	// permet l'affichage de la vue de creation d'un post
-	@RequestMapping(value = "new", method = RequestMethod.GET)
+	@RequestMapping(value = { "new", "post/new", "edit/new", "contact/new"}, method = RequestMethod.GET)
 	public String newPost(Model model) {
 		Post post = new Post();
 		model.addAttribute("post", post);

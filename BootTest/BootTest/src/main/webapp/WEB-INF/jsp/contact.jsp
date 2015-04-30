@@ -63,9 +63,6 @@
                         <a href="new">Nouvel Article</a>
                     </li>
                     </c:if>
-                    <li>
-                        <a href="contact">Qui sommes-nous ?</a>
-                    </li>
                        <c:if test="${administrateur==false}">
                       <li>
                         <a href="login">Connexion</a>
