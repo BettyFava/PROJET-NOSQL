@@ -116,7 +116,7 @@ public class PostRepository {
 	}
 
 	public void addCommentByPostId(String id, String comment) {
-		if (mongoTemplate.collectionExists(Post.class)) {
+		if (mongoTemplate.collectionExists(Post.class) && comment !=null && !comment.isEmpty()) {
 			Query query = new Query(Criteria.where("_id").is(id));
 			mongoTemplate.updateFirst(query,
 					new Update().push("comments", comment), Post.class);

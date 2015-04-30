@@ -15,7 +15,7 @@
 
 <!-- Custom CSS -->
 <link href="../css/clean-blog.min.css" rel="stylesheet">
-
+<link href="../css/nosql.css" rel="stylesheet">
 <!-- Custom Fonts -->
 <link
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
@@ -89,7 +89,7 @@
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	<header class="intro-header"
-		style="background-image: url('../img/post-bg.jpg')">
+		style="background-image: url('../img/postfont.jpg')">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -116,36 +116,48 @@
 				</div>
 			</div>
 		</div>
-		<div class="comments">
-			<div class="row">
-				<div >
-				<c:forEach items="${post.getComments()}" var="comment">
-				<blockquote>
-					<c:out value="${comment}"></c:out>
-				</blockquote>
-				</c:forEach>
-				</div>
-			</div>
-		</div>
+		
 		<hr>
 		<div class="container">
-			<div class="row">
-				<h4>Ajouter un commentaire</h4>				
-				<form:form method="POST" modelAttribute="post" action="valider_commentaire">
-				<div class="form-group">
-					<form:hidden path="id" value="${id}" />
-					<div class="col-md-6">
-						<input type="text" class="form-control" name="comments"/>
-						<div class="form-actions right"> 
-							<button  type="submit" class="btn btn-default buttonmargin"> Ajouter </button> 
-				 		</div> 
-					</div>
-				</div>
-				</form:form>
-			</div>
+			
 		</div>
 	</article>
+	<div class="container">
+	<hr>
+				<div class="well">
+                    <h4>Ajouter un commentaire</h4>
+                    <form:form method="POST" modelAttribute="post" action="valider_commentaire">
+                    <form:hidden path="id" value="${id}" />
+                    
+                        <div class="form-group">
+                        <input type="text" rows="3" class="form-control" name="comments"/>
+                        
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form:form>
+                </div>
 
+                <hr>
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                
+
+				<c:forEach items="${post.getComments()}" var="comment">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="../img/comFont.png" alt="">
+                    </a>
+                    <div class="media-body">
+                        
+                        <c:out value="${comment}"></c:out>
+                    	</div>	
+                </div>
+				</c:forEach>
+                
+
+    </div>
 	<hr>
 
 	<!-- Footer -->
